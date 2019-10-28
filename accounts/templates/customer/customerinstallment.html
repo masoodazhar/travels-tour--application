@@ -36,7 +36,65 @@
                         <strong>Info</strong> {{ message.message }}
                     </div>
                    {% endfor%}
-
+                   <div class="row">
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                            <div class="card card-stats statistic-box mb-4">
+                                <div class="card-header card-header-warning card-header-icon position-relative border-0 text-right px-3 py-0">
+                                    <div class="card-icon d-flex align-items-center justify-content-center">
+                                        <i class="typcn typcn-device-tablet"></i>
+                                    </div>
+                                    <p class="card-category text-uppercase fs-10 font-weight-bold text-muted">Pending</p>
+                                    <h3 class="card-title fs-18 font-weight-bold">
+                                        <small>RS.</small>  {{ collect_remaining_amints }}
+                                    </h3>
+                                </div>
+                                <div class="card-footer p-3 bg-primary text-default">
+                                    <div class="stats " style="font-size: 20px;">
+                                        <i class="typcn typcn-warning text-warning mr-2"></i>
+                                        <a href="#" class="warning-link text-white">Remaining Amount was</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                            <div class="card card-stats statistic-box mb-4">
+                                <div class="card-header card-header-warning card-header-icon position-relative border-0 text-right px-3 py-0">
+                                    <div class="card-icon d-flex align-items-center justify-content-center">
+                                        <i class="typcn typcn-device-tablet"></i>
+                                    </div>
+                                    <p class="card-category text-uppercase fs-10 font-weight-bold text-muted">Used Space</p>
+                                    <h3 class="card-title fs-18 font-weight-bold"> 
+                                        <small>Rs</small> {{ getting_all_installment_after_paid_from_customer }}
+                                    </h3>
+                                </div>
+                                <div class="card-footer p-3 bg-success">
+                                    <div class="stats " style="font-size: 20px;">
+                                        <i class="typcn typcn-warning text-warning mr-2"></i>
+                                        <a href="#" class="warning-link text-white">Remaining Amount Paid</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-6">
+                            <div class="card card-stats statistic-box mb-4">
+                                <div class="card-header card-header-warning card-header-icon position-relative border-0 text-right px-3 py-0">
+                                    <div class="card-icon d-flex align-items-center justify-content-center">
+                                        <i class="typcn typcn-device-tablet"></i>
+                                    </div>
+                                    <p class="card-category text-uppercase fs-10 font-weight-bold text-muted">Used Space</p>
+                                    <h3 class="card-title fs-18 font-weight-bold">
+                                        <small>RS. </small>{{still_remaining_amount_from_customer }}
+                                    </h3>
+                                </div>
+                                <div class="card-footer p-3 bg-danger">
+                                    <div class="stats " style="font-size: 20px;">
+                                        <i class="typcn typcn-warning text-warning mr-2"></i>
+                                        <a href="#" class="warning-link text-white">Still Remaining Amount</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                    
                         <form method="POST" noValidate>
                             <div class="card mb-4">
@@ -45,14 +103,13 @@
                                     <tbody>
                                         <tr>
                                             {% for pnr in all_pnr_this_customer %}
-                                               
-                                                <td colspan="" class="text-bold"> <span class="text-bold"><a href="{% url 'ticketview' pk=pnr.id pnr=pnr.pnr %}"><i class="fas fa-eye"></i></a> {{ pnr.pnr }}:</span> <span class="pnr">  {{ pnr.remainingamount }} </span> </td>
+                                                <td colspan="" class="text-bold"> <span class="text-bold"><a href="{% url 'ticketview' pk=pnr.id pnr=pnr.pnr %}">Wiew More <i class="fas fa-eye"></i></a> {{ pnr.pnr }}:</span> <span class="pnr">  {{ pnr.remainingamount }} </span> </td>
                                             {% endfor %}
                                         </tr>
-                                       <tr>
+                                       <!-- <tr>
                                             <td colspan="{{ number_of_columns }}" class="text-bold"> <span class="text-bold"> Total Remaining Amount of {{ customername }}:</span> <span class="pnr">  {{ collect_remaining_amints }} </span> </td>
                                            <tr>
-                                       
+                                        -->
                                       
                                        
                                        <tbody>
@@ -74,7 +131,7 @@
                                                             <select name="pnr"  id="id_pnr" class="textinput textInput form-control form-control class_pnr"> 
                                                                 <option value="">Select PNR Sold to {{ customername }}</option> 
                                                                 {% for pnr in all_pnr_this_customer%}
-                                                                    <option value="{{ pnr.id }}">{{ pnr.pnr }}</option>
+                                                                    <option value="{{ pnr.pnr }}">{{ pnr.pnr }}</option>
                                                                 {% endfor %}
                                                             <select>
                                                 </div>

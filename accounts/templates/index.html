@@ -3,6 +3,111 @@
 
 
 {% block body %}
+<div class="body-content">
+                        <div class="row">
+                                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                                    <div class="card card-stats statistic-box mb-4">
+                                        <div class="card-header card-header-warning card-header-icon position-relative border-0 text-right px-3 py-0">
+                                            <div class="card-icon d-flex align-items-center justify-content-center">
+                                                <i class="typcn typcn-device-tablet"></i>
+                                            </div>
+                                            <p class="card-category text-uppercase fs-10 font-weight-bold text-muted">Used Space</p>
+                                            <h3 class="card-title fs-18 font-weight-bold">
+                                                <small>Rs.</small> {{sum_of_all_remaining_amount}}
+                                            </h3>
+                                        </div>
+                                        <div class="card-footer p-3">
+                                            <div class="stats">
+                                                <i class="typcn typcn-warning text-warning mr-2"></i>
+                                                <a href="{% url 'customeradd' %}" class="warning-link">Total Remaining Amount</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                               
+                                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                                    <div class="card card-stats statistic-box mb-4">
+                                        <div class="card-header card-header-info card-header-icon position-relative border-0 text-right px-3 py-0">
+                                            <div class="card-icon d-flex align-items-center justify-content-center">
+                                                <i class="fab fa-twitter"></i>
+                                            </div>
+                                            <p class="card-category text-uppercase fs-10 font-weight-bold text-muted">Return Amount</p>
+                                            <h3 class="card-title fs-21 font-weight-bold"><small>Rs.</small> {{sum_of_all_paid_amount}}</h3>
+                                        </div>
+                                        <div class="card-footer p-3">
+                                            <div class="stats">
+                                                <i class="typcn typcn-upload mr-2"></i>Remaining Returned
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                                        <div class="card card-stats statistic-box mb-4">
+                                            <div class="card-header card-header-danger card-header-icon position-relative border-0 text-right px-3 py-0">
+                                                <div class="card-icon d-flex align-items-center justify-content-center">
+                                                    <i class="typcn typcn-info-outline"></i>
+                                                </div>
+                                                <p class="card-category text-uppercase fs-10 font-weight-bold text-muted">Still Remaining Amount</p>
+                                                <h3 class="card-title fs-21 font-weight-bold"> <small>Rs.</small>  {{still_remaining_amount}}</h3>
+                                            </div>
+                                            <div class="card-footer p-3">
+                                                <div class="stats">
+                                                    <i class="typcn typcn-social-githu mr-2b"></i>Stiil Remaining Amount
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+                                        <div class="card card-stats statistic-box mb-4">
+                                            <div class="card-header card-header-success card-header-icon position-relative border-0 text-right px-3 py-0">
+                                                <div class="card-icon d-flex align-items-center justify-content-center">
+                                                    <i class="typcn typcn-home-outline"></i>
+                                                </div>
+                                                <p class="card-category text-uppercase fs-10 font-weight-bold text-muted">Total Profit </p>
+                                                <h3 class="card-title fs-21 font-weight-bold"><small>Rs.</small>  {{sum_of_all_profit_amount}}</h3>
+                                            </div>
+                                            <div class="card-footer p-3">
+                                                <div class="stats">
+                                                    <i class="typcn typcn-calendar-outline mr-2"></i>Total Profit
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <form method="GET">
+                                            <div class="card">
+                                                    <div class="card-header">
+                                                        <h3>Search By Month <small>Based on ticket issue </small> </h3>
+                                                    </div>
+                                                    <div class="card-body">
+                                                      <div class="row">
+                                                          <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                        <label for="startmonth">Start Month</label>
+                                                                        <input id="startmonth" class="form-control" type="month" name="startmonth">
+                                                                    </div>
+                                                          </div>
+                                                          <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                        <label for="startmonth">End Month</label>
+                                                                        <input id="startmonth" class="form-control" type="month" name="endmonth">
+                                                                    </div>
+                                                          </div>
+                                                          <div class="col-sm-4">
+                                                                <div class="form-group">
+                                                                        <label for="startmonth">Search</label>
+                                                                        <input id="startmonth" class="form-control btn btn-primary" type="submit" name="">
+                                                                    </div>
+                                                          </div>
+                                                      </div>
+                                                    </div>
+                                                </div>
+                                    </form>
+                                </div>
+                            </div>
                         <div class="row">
                             <div class="col-lg-12 my-2 mx-2">
                                 <div class="card">
@@ -207,5 +312,6 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
                         
 {% endblock body %}

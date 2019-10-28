@@ -49,7 +49,7 @@
             <nav class="sidebar sidebar-bunker">
                 <div class="sidebar-header">
                     <!--<a href="index.html" class="logo"><span>bd</span>task</a>-->
-                    <a href="index.html" class="logo"><img src="{% static 'assets/dist/img/logo.png'%}" alt=""></a>
+                    <a href="{% url 'index' %}" class="logo"><img src="{% static 'assets/dist/img/logo.png'%}" alt=""></a>
                 </div><!--/.sidebar header-->
                 <div class="profile-element d-flex align-items-center flex-shrink-0">
                     <div class="avatar online">
@@ -81,6 +81,19 @@
                                     <li><a href="{% url 'customeradd' %}">Customer</a></li>
                                     <li><a href="{% url 'airlineadd' %}">Air Lines</a></li>
                                     
+                                </ul>
+                            </li>
+                            
+                        </ul>
+                        <ul class="metismenu">
+                            
+                            <li class="">
+                                <a class="has-arrow material-ripple" href="#">
+                                    <i class="typcn typcn-home-outline mr-2"></i>
+                                    CLINIC
+                                </a>
+                                <ul class="nav-second-level">
+                                    <li><a href="#">DOCTORS</a></li>
                                 </ul>
                             </li>
                             
@@ -209,6 +222,7 @@
                     
                     <!--/.Content Header (Page header)--> 
                     {% block body %}
+                    
                     {% endblock body %}
                    
                     </div><!--/.body content-->

@@ -26,7 +26,7 @@ class CustomerInstallment(models.Model):
     description = models.TextField(null=False)
 
     def __str__(self):
-        return self.cid
+        return self.customerid
 
     def get_absolute_url(self):
         return reverse("CustomerInstallment_detail", kwargs={"pk": self.pk})

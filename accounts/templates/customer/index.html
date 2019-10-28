@@ -45,7 +45,9 @@
                                                 <th>#</th>
                                                 <th>Name</th>
                                                 <th>Contact</th>
-                                                <th>Remaining Amount</th>
+                                                <th>Remaining Amount Was</th>
+                                                <th>Paid Remaining Amount</th>
+                                                <th>Still Remaining amount</th>
                                                 <th>Action</th>
                                             </tr>
                                         </thead>
@@ -55,7 +57,9 @@
                                                 <td>{{ forloop.counter }}</td>
                                                 <td>{{ customer.cname }}</td>
                                                 <td>{{ customer.ccontact }}</td>
-                                                <td><a href="{% url 'customerinstallmentadd' pk=customer.pk %}"> Rs. {{ customer.remaingingamount }}</a></td>
+                                                <td>{{ customer.remainingamountwas }}</td>
+                                                <td><a href="{% url 'customerinstallmentadd' getid=customer.pk %}"> Rs. {{ customer.installmentPaid }}</a></td>
+                                                <td>{{ customer.stillremaining }}</td>
                                                 <td width="15%">
                                                 <a href="{% url 'customeredit' pk=customer.pk %}"> Edit <i class="fas fa-check"></i> </a> | 
                                                 <a onclick="return confirm('are sure to delete {{customer.cname}}')" href="{% url 'customerdelete' pk=customer.pk %}"> Delete <i class="fas fa-trash-alt"></i> </a>
